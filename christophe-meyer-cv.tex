@@ -1,0 +1,216 @@
+\documentclass[11pt,letterpaper,serif]{moderncv}
+
+\usepackage{verbatim}
+
+% moderncv themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage{lastpage}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% --- Begin use with Multibib ----
+\usepackage[resetlabels]{multibib}
+\newcites{article,patent,talk}{{Journal Articles},{Patent},{Conference Talks}}
+
+% Number the Publications
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+% --- END use with Multibib ---
+
+% \usepackage[backend=biber,style=ieee,sorting=none,url=false,isbn=false,doi=false,maxcitenames=8]{biblatex}
+
+% % sed "s|Meyer, Christophe|{\\\myname{meyer}}|" > biblio-underlined.bib zotero.bib
+% \newcommand{\myname}[1]{\underline{C. Meyer}}
+% \addglobalbib{biblio-underlined.bib}
+
+% BibTeX - don't print the year for publications that are "in press"
+\newcommand{\dontprintyear}[1]{}
+
+
+% personal data
+\firstname{Christophe}
+\familyname{Meyer, PhD}
+% \title{Imaging software engineer}                               % optional, remove / comment the line if not wanted
+
+\social[linkedin][www.linkedin.com/in/christophemeyer]{christophe-meyer}
+%\homepage{cmey.io}                % optional, remove the line if not wanted
+\social[github]{cmey}                              % optional, remove / comment the line if not wanted
+\mobile{(203) 300-3824}                    % optional, remove the line if not wanted
+\address{}{}{New Haven, CT 06511, USA}    % optional, remove the line if not wanted
+\email{christophe.meyer.pro@gmail.com}                      % optional, remove the line if not wanted
+% \social[twitter]{cyberchrist}                             % optional, remove / comment the line if not wanted
+% \date{\today}
+% \quote{Last Updated: \today}                                 % optional, remove / comment the line if not wanted
+
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% Could never get the page numbers to work so added them by hand with \rfoot
+% \nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+% \input{filename}
+
+\maketitle
+\rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+% \cvline{}{Engineering and Research Interests: Medical imaging, acquisition, reconstruction, processing, analysis and quantification; cardiac dynamics; finance.}
+% MAYBE SECTION {Languages and Technologies}
+% \cvline{}{Specialties: Python, C++, Julia, debugging, testing, software architecture, parallelism, 3D rendering, Java, Matlab, realtime, VxWorks, TCP/IP}
+% \cvline{}{Je suis un ingénieur en informatique qui prend du plaisir à déboguer les codes C++, développer des solutions graphiques, idéalement avec du calcul numérique. Je recherche une entreprise qui prend soin de ses développeurs et qui vise à se développer.}
+
+\section{Experience}
+\cventry{2015--Present}{Hyperfine Research Inc. and Butterfly Network Inc.}{}{Guilford, CT, USA}{}{Principal engineer for color Doppler ultrasound. Led team of 14 total people to develop Color Doppler mode, successfully shipped into product. Architected software to support interleaved BMode and color Doppler. Custom pulse sequence programming, in Python. Designed and implemented advanced ultrasound processing, in C++ and OpenCL/Metal, on iOS. Owner of abdominal presets, best rated presets by clinical team.}
+
+\cventry{2011--2014}{Adaptive Imaging Laboratory}{University of Lorraine}{Nancy, France}{}{Ph.D. in Electrical Engineering: Automatic adaptive MRI based on physiological signals. Demonstrated improved image quality in cardiac MRI using my inovative pulse sequence and patient-adaptive cardiac motion model. 6 months abroad in Munich, Germany at General Electric Research Center.}
+
+\cventry{2009--2010}{Adaptive Imaging Laboratory}{University of Lorraine}{Nancy, France}{}{Research engineer: Sped up and automated a research result allowing free breathing MRI. Designed and implemented firmware code and communication protocols for motion sensors on Microchip PIC microcontrollers.}
+
+\cventry{2009}{Scalable Graphics}{}{Nancy, France}{}{R\&D engineer: Sped-up a custom ray tracing application by parallelization on a compute cluster of multi-GPU nodes. Developed a custom load blancing technique that achieved 3x speed improvement strong scalability with 4 local GPUs. }
+
+\section{Education}
+\cventry{2011--2014}{Ph.D. in Electrical Engineering}{Adaptive Imaging Laboratory}{University of Lorraine}{Nancy, France}{Dissertation: Automatic adaptive MRI based on physiological signals.} % arguments 3 to 6 can be left empty
+% \cvline{advisor:}{\small Professor Jacques Felblinger}
+\cventry{2006--2009}{M.S., Computer Science}{ESIAL}{University of Lorraine}{Nancy, France}{Engineering school. Specialization in embedded systems. Honors: highest class average (of 91).}
+% \cvline{gpa:}{\small 3.76/4.0}
+% \cvline{honors:}{\small Cum Laude}
+
+
+% --- START For use with BibLatex ---
+% \begin{refsection}[publications]
+% \nocite{*}
+% \printbibliography[resetnumbers=true,sorting=ynt,%mod
+% title={Entire publication list sorted by year}]
+% \end{refsection}
+% ---- END for use with biblatex ----
+
+% --- START For use with BibTeX, not BibLaTeX .... ---
+% \nocite{*}
+% \bibliographystyle{habbrvyr}
+% % \biblographystyle{plain}
+% \bibliography{publications}                    % 'publications' is the name of a BibTeX file
+
+% % \nocite{*}
+% % \bibliographystyle{habbrvyr}
+% % \bibliography{books}
+% ---- END for use with bibtex ----
+
+
+% --- START for use with multibib package ---
+% Publications from a BibTeX file using the multibib package
+\section{Publications}
+
+% \nocitebook{*}
+\nocitepatent{meyer_method_2014}
+\bibliographystylepatent{habbrvyrcmey}
+\bibliographypatent{patents}                   % 'books' is the name of a BibTeX file
+
+% \nocitearticle{*}
+\nocitearticle{meyer_accuracy_2017}
+\nocitearticle{bonnemains_is_2015}
+\nocitearticle{meyer_longitudinal_2014}
+%\nocitearticle{meyer_snr-enhanced_2014}
+\nocitearticle{meyer_towards_2014}
+\nocitearticle{meyer_first_2012}
+\bibliographystylearticle{habbrvyrcmey}
+\bibliographyarticle{articles}                   % 'articles' is the name of a BibTeX file
+
+% \nociteposter{*}
+\nocitetalk{meyer_mesure_2012}
+\nocitetalk{meyer_snr-enhanced_2013}
+\bibliographystyletalk{habbrvyrcmey}
+\bibliographytalk{talks}                   % 'posters' is the name of a BibTeX file
+% --- END for use with multibib package ----
+
+
+% \defbibheading{bibliography}{
+%   \SpecialSection{#1}
+%   \markright{\itshape #1}
+% }
+
+% \printbibheading[heading=bibliography, title=Liste des publications]
+
+% % biblio locale
+% \begin{refsection}
+
+% \begin{refsegment}
+% \nocite{meyer_longitudinal_2014}
+% \nocite{meyer_subject-specific_2014}
+% \nocite{meyer_snr-enhanced_2014}
+% \end{refsegment}
+
+% \begin{refsegment}
+% \nocite{meyer_method_2014}
+% \end{refsegment}
+
+% \begin{refsegment}
+% \nocite{meyer_mesure_2012}
+% \nocite{meyer_snr-enhanced_2013}
+% \end{refsegment}
+
+% \begin{refsegment}
+% \nocite{meyer_first_2012}
+% \nocite{meyer_images_2012}
+% \nocite{meyer_towards_2014}
+% \nocite{meyer_mesure_2012-1}
+% \nocite{vuissoz_high_2014}
+% \nocite{vuissoz_motion-compensated_2012}
+% \end{refsegment}
+
+% \printbibliography[segment=1,heading=subbibliography,title=Articles de revues]
+% \printbibliography[segment=2,heading=subbibliography,title=Brevet]
+% \printbibliography[segment=3,heading=subbibliography,title=Présentations orales de congrès]
+% \printbibliography[segment=4,heading=subbibliography,title=Présentations posters de congrès]
+
+% \end{refsection}
+
+% % pour la suite du document : bibliography globale complète
+% \newrefsection
+
+\section{Software}
+% \cvline{}{All software is written in Python and open source, licensed under the 3-clause BSD license, except where noted.}
+
+\cvline{\small\texttt{WaveSim.jl}}{Wave propagation simulator, written in Julia. Allows visualization of ultrasound transmit pulse focusing. \newline\url{http://github.com/cmey/WaveSim.jl}}
+
+\cvline{\footnotesize\texttt{Interference.jl}}{Visualization of wave interference, demonstrates how to make animations in Julia. \newline\url{http://github.com/cmey/Interference.jl}}
+
+% \cvline{\footnotesize\texttt{DistributionsPlot.jl}}{Plot each distribution of the Distributions.jl package with various parameters. Helps to learn and to recognize distributions. \newline\url{http://github.com/cmey/DistributionsPlot.jl}}
+
+% \cvline{\small\texttt{prettyplotlib}}{Painlessly create beautiful \texttt{matplotlib} plots.
+% prettyplotlib url is too long for the page width and looks weird so using the small font here
+% \newline\url{http://github.com/olgabot/prettyplotlib} (1,159 stars on GitHub)}
+
+\section{Extracurricular activities}
+
+% \cventry{year--year}{Job title}{Employer}{City}{}{Description}
+
+\cventry{2008}{Participant}{RobAFIS robotic challenge}{Nimes, France}{}{Highly documented systems engineering. Built robot with Lego Mindstorms. C programming.}
+
+\cventry{2007--2008}{Vice-secretary and CTO}{ESIAL Service}{Nancy, France}{}{Responsible for technical program and budget in a small software company for students in my engineering school.}
+
+\cventry{2005--2009}{Co-founder}{Errare}{}{}{Development of a 3D graphics engine and a distributed logger for the Errare project \newline(\url{http://errare.sourceforge.net}), in a team of 10 people, demonstrating that Java can be used for interactive 3D rendering.}
+
+% \section{Languages}
+
+% \cvline{French}{Native. Teached my colleagues.}
+% \cvline{English}{TOEIC (technical and general english) validated with 830 points in 2004, full working proficiency.}
+% \cvline{German}{Good general understanding, lived in Germany for 6 months and at the border for 30 years.}
+
+\end{document}
